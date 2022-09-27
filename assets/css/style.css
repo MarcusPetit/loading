@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
 :root {
-  --primary-color: rgb(17, 86, 102);
+  --primary-color: rgb(0, 0, 0);
   --primary-color-darker: rgb(9, 48, 56);
 }
 
@@ -16,63 +16,59 @@ body {
   font-family: 'Open sans', sans-serif;
   font-size: 1.3em;
   line-height: 1.5em;
-}
-
-.container {
-  max-width: 640px;
-  margin: 50px auto;
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-}
-.container p {
-    font-size: 1.2em;
+  
 }
 .center{
     display: flex;
-    justify-content: space-around;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
-.imcTabela h2{
-    font-size: 60px;
+.ring{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    animation: ring 2s linear infinite;
 }
-.imcResultado h2{
-    font-size: 60px;
-}
-form input, form label, form button {
-  display: block;
-  width: 100%;
-  margin-bottom: 10px;
-}
+@keyframes ring {
+    0% {
+        transform: rotate(0deg);
+        box-shadow: 1px 5px 2px #9e0808;
+    }
+    50% {
+        transform: rotate(120deg);
+        box-shadow: 1px 5px 2px #c5d816;
+    }
+    100% {
+        transform: rotate(360deg);
+        box-shadow: 1px 5px 2px #24089e;
+    }
+    
 
-form input {
-  font-size: 24px;
-  height: 50px;
-  padding: 0 20px;
-}
+}    
 
-form input:focus {
-  outline: 1px solid var(--primary-color);
+.ring:before{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 0 0 5px rgba(255,255,255,.3);
 }
-
-form button {
-  border: none;
-  background: var(--primary-color);
-  color: #fff;
-  font-size: 18px;
-  font-weight: 700;
-  height: 50px;
-  cursor: pointer;
-  margin-top: 30px;
+span {
+    color: #737373;
+    font-weight: 600;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 200px;
+    animation: text 2s ease-in-out infinite;
 }
-
-form button:hover {
-  background: var(--primary-color-darker);
-}
-.paragrafo-resultado{
-    background: bisque;
-    padding: 10px 20px;
-}
-.erro{
-    background: rgb(185, 106, 106);
-    padding: 10px 20px;
+@keyframes text {
+    50% {
+        color: black;
+    }
 }
